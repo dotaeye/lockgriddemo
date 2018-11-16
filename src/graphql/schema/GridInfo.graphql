@@ -1,0 +1,37 @@
+module.exports = `
+  type GridInfo {
+    id: ID!
+    pid: String
+    status: Int
+    gnumber: Int
+    price: Int
+    weight: Int
+    locked: Boolean
+  }
+
+  extend type Query {
+    # Get one
+    getGridInfos: [GridInfo]
+
+  }
+
+  input ChangeGridInput {
+    gnumbers: [ID!]
+    status: Int
+  }
+
+  input lockGridInput {
+    gnumbers: [ID!]
+  }
+
+  extend type Mutation {
+    # 更改Grid的状态
+    changeGridStatus(input: ChangeGridInput!): [GridInfo]
+
+     # 锁定Grid的
+    lockGrids(input: lockGridInput!): [GridInfo]
+
+    # 解锁Grid
+    unlockGrids(input: lockGridInput!): [GridInfo]
+  }
+`

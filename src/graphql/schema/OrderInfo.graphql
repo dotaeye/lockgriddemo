@@ -1,0 +1,13 @@
+module.exports = `
+  type OrderInfo {
+    id: ID!
+    oid: String
+    gnumber: Int
+  }
+
+  extend type Query {
+    # Get one
+    getOrderInfos: [OrderInfo]
+  }
+
+`

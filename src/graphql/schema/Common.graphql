@@ -1,0 +1,13 @@
+module.exports = `
+  scalar JSON
+  scalar Date
+  
+  interface Page {
+    totalCount: Int
+    hasMore: Boolean
+    totalPages: Int
+    pageIndex: Int
+    pageSize: Int
+  }
+
+`
